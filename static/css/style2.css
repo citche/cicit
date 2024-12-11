@@ -1,0 +1,98 @@
+body{
+    background-color: #f9fbff;
+}
+
+@media (max-width: 700px){
+	.card-md{
+      width: 100%;
+	}
+}
+
+.tabel-karyawan{
+	border: 0;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.tabel-karyawan thead{
+	color: #ffffff;
+}
+
+.tabel-karyawan thead th{
+	text-transform: uppercase;
+	font-size: 12px;
+	text-align: left;
+	padding: 20px 15px;
+	background-color: #00c292;
+}
+
+.sticky{
+	position: sticky;
+	top: 0;
+}
+
+.tabel-karyawan tbody tr{
+	border-bottom: 1px solid #dddddd;
+}
+
+.tabel-karyawan tbody tr:nth-child(even){
+	background-color: #f7f7f7;
+}
+
+.tabel-karyawan tbody tr:last-child{
+	border-bottom: 0;
+}
+
+.tabel-karyawan tbody tr td{
+	padding: 5px 15px;
+	font-size: 13px;
+}
+
+
+.baris{
+	position: relative;
+	margin: 0 -15px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.selamat-datang{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 15px;
+	margin: 30px 0 20px 0;
+}
+
+.selamat-datang .col-header{
+	flex: 5;
+}
+
+.selamat-datang .col-header .judul-sm{
+	font-size: 14px;
+	letter-spacing: .3px;
+}
+
+.selamat-datang .col-header .judul-sm span{
+	font-weight: bold;
+}
+
+.selamat-datang .col-header .judul-md{
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: .3px;
+}
+
+.txt-right{
+	text-align: right;
+}
+
+.selamat-datang .col-header a{
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+}

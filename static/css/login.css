@@ -1,0 +1,150 @@
+body {
+    background: url('../img/BG 1.jpeg') no-repeat center fixed; /* Pastikan path benar */
+    background-size: cover; /* Tambahkan ini untuk memastikan gambar menutupi seluruh area */
+    font-family: 'Roboto', sans-serif;
+}
+
+.login-box {
+    margin-top: 200px;
+    height: auto;
+    background: rgba(26, 26, 26, 0.8); /* Warna gelap dengan transparansi 80% */
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    padding: 1rem; /* Tambahkan padding untuk estetika */
+    transform: translateY(-30px); /* Posisi awal untuk animasi */
+    opacity: 0; /* Memulai dengan transparansi 0 */
+    animation: slideIn 0.5s forwards; /* Menggunakan animasi slideIn */
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateY(0); /* Akhir posisi */
+        opacity: 1; /* Akhir transparansi */
+    }
+}
+
+.container-gede {
+    width: 100%;
+    display: block;
+    justify-items: center;
+}
+
+.login-key {
+    height: 100px;
+    font-size: 80px;
+    line-height: 100px;
+    background: linear-gradient(#FF0000, #FF4C4C); /* Gradien merah */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* Untuk dukungan non-WebKit */
+    color: transparent; /* Pastikan teks tidak terlihat jika gradien tidak didukung */
+}
+
+.login-title {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #FFFFFF; /* Putih */
+}
+
+.login-form {
+    margin-top: 25px;
+    text-align: left;
+}
+
+input[type=text], input[type=password] {
+    background-color: #1A1A1A; /* Warna gelap */
+    border: none;
+    border-bottom: 2px solid #FF0000; /* Merah */
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 20px;
+    padding-left: 0px;
+    color: #FFFFFF; /* Putih */
+    transition: border-bottom 0.3s; /* Transisi pada border */
+}
+
+.form-group {
+    margin-bottom: 40px;
+    outline: 0px;
+}
+
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 2px solid #FF0000; /* Merah */
+    outline: 0;
+    background-color: #1A1A1A; /* Warna gelap */
+    color: #FFFFFF; /* Putih */
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0;
+}
+
+label {
+    margin-bottom: 0px;
+}
+
+.form-control-label {
+    font-size: 10px;
+    color: #FFFFFF; /* Putih */
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.btn-outline-primary {
+    border-color: #FF0000; /* Merah */
+    color: #FF0000; /* Merah */
+    border-radius: 0px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: background-color 0.3s, color 0.3s; /* Transisi pada warna latar belakang dan teks */
+}
+
+.btn-outline-primary:hover {
+    background-color: #FF0000; /* Merah */
+    color: #FFFFFF; /* Putih */
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.login-btm {
+    float: left;
+}
+
+.login-button {
+    padding-right: 0px;
+    text-align: right;
+    margin-bottom: 25px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.login-text {
+    text-align: center; /* Memusatkan teks */
+    margin-top: 15px; /* Memberikan jarak atas */
+}
+
+.login-text a {
+    color: #FF0000; /* Warna merah untuk tautan */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    font-weight: bold; /* Menggunakan huruf tebal */
+}
+
+.login-text a:hover {
+    text-decoration: underline; /* Menambahkan garis bawah saat hover */
+}
+
+.loginbttm {
+    padding: 0px;
+}

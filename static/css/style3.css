@@ -1,0 +1,133 @@
+/* GENERAL RESET */
+body {
+    background-color: #f4f8fc;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+@media (max-width: 700px) {
+    .card-md {
+        width: 95%;
+    }
+}
+
+/* TABLE STYLING */
+.tabel-karyawan {
+    border: 0;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.tabel-karyawan thead {
+    color: #ffffff;
+}
+
+.tabel-karyawan thead th {
+    text-transform: uppercase;
+    font-size: 13px;
+    text-align: left;
+    padding: 15px;
+    background-color: #3cbec2;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+}
+
+.tabel-karyawan tbody tr {
+    border-bottom: 1px solid #dddddd;
+    transition: background-color 0.3s ease;
+}
+
+.tabel-karyawan tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tabel-karyawan tbody tr:hover {
+    background-color: #dfe6e9;
+}
+
+.tabel-karyawan tbody tr td {
+    padding: 12px 15px;
+    font-size: 14px;
+}
+
+/* FLEX LAYOUT */
+.baris {
+    position: relative;
+    margin: 0 -15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.selamat-datang {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    margin: 30px 0 20px 0;
+}
+
+.selamat-datang .col-header {
+    flex: 1;
+}
+
+.selamat-datang .col-header .judul-sm {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    color: #2d3436;
+}
+
+.selamat-datang .col-header .judul-sm span {
+    color: #3cbec2;
+}
+
+.selamat-datang .col-header .judul-md {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: #636e72;
+}
+
+.txt-right {
+    text-align: right;
+}
+
+.selamat-datang .col-header a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #3cbec2;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.selamat-datang .col-header a:hover {
+    background-color: #3cbec2;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+@media (max-width: 768px) {
+    .selamat-datang {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .txt-right {
+        text-align: left;
+        width: 100%;
+    }
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Steller landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Kegiatan</title>
+    <!-- Bootstrap + Steller main styles -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='/css/steller.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style3.CSS')}}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='static/css/style.css') }}">
+    
+</head>
+<body>
+        <!-- Page navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" data-spy="affix" data-offset-top="0">
+          <div class="container">
+              <a class="navbar-brand" href="/">RST TEAM.</a>
+  
+          </div>          
+      </nav>
+      <!-- End of page navibation -->
+      <div class="baris">
+        <div class="selamat-datang">
+        </div>
+    </div>
+    <!-- Sesion Awan -->
+    <section>
+        <div id="main" class="main-content">
+            <div class="container">
+            <br>
+                <div class="col-header">
+                  <p class="judul-sm"><b>Schedule</b></p>
+                </div>
+                <div class="col txt-right">
+                <button class="btn btn-primary float-right" data-toggle="modal" data-target="#myModal">+ Schedule</button>
+                </div>
+    
+                <div class="baris">
+                    <div class="selamat-datang">
+                        <div class="col-header">
+                            <p class="judul-sm"></p>
+                            <h2 class="judul-md"></h2>
+                        </div>
+                    </div>
+                </div>
+
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+          
+                    <div class="modal-header">
+                        <h5 class="modal-title text-primary" style="align-content: center;">Silahkan Tambahkan Kegiatan</h5>    
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      
+          
+                    <div class="modal-body">  
+                        <form action="{{url_for('add_schedule')}}" method="POST">
+                            <div class="form-group">
+                              <label>Nama</label>
+                              <input type="text" name="nama" class="form-control" id="" placeholder="Enter Nama">
+                            </div>
+          
+                            <div class="form-group">
+                                <label>Hari</label>
+                                <input type="text" name="hari" class="form-control" id="" placeholder="Enter Hari">
+                            </div>
+          
+                            <div class="form-group">
+                              <label>Tanggal</label>
+                              <input type="datetime-local" class="" name="tanggal" placeholder="Enter Date"></input>
+                          </div>
+          
+                          <div class="form-group">
+                            <label>Kegiatan</label>
+                            <input type="text" name="kegiatan" class="form-control" id="" placeholder="Enter Kegiatan">
+                        </div>
+          
+                        <div class="form-group">
+                          <label>Keterangan</label>
+                          <input type="text" name="keterangan" class="form-control" id="" placeholder="Enter Keterangan">
+                      </div>
+                              <button type="submit" class="btn btn-primary mb-2">Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+           
+          <div class="card-body">
+            <div class="tabel-kontainer">
+               <table class="tabel-karyawan">
+                <thead>
+                  <tr>
+                    <th class="sticky">Nama</th>
+                    <th class="sticky">Hari</th>
+                    <th class="sticky">Tanggal</th>
+                    <th class="sticky">Kegiatan</th>
+                    <th class="sticky">Keterangan</th>
+                    <th class="sticky" style="text-align: center">Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for row in ak %}
+                  <tr>
+                    <td>{{row.0}}</td>
+                    <td>{{row.1}}</td>
+                    <td>{{row.2}}</td>
+                    <td>{{row.3}}</td>
+                    <td>{{row.4}}</td>
+                    <td>
+                      <a href="/update_schedule/{{row.0}}" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modaledit{{row.0}}">Edit</a>
+                      <a href="/hapus_schedule/{{row.0}}" onclick="return confirm('Are Sure Want To Deleted ?')" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                  </tr>
+          
+                  <!-- Update Kegiatan -->
+                  <div id="modaledit{{row.0}}" class="modal fade" role="dialog">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                 
+                              <div class="modal-header">
+                                  <h5 class="modal-title text-primary" style="align-content: center;">Update Kegiatan Details</h5>    
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                
+                              <div class="modal-body">    
+                                  <form action="/update_schedule/" method="POST">
+                                    <div class="form-group">
+                                        <label>Nama</label>
+                                        <input value="{{row.0}}" type="hidden" name="nama" class="form-control" id="exampleFormControlInput1" placeholder="Enter Nama">
+                                    </div>
+          
+                                    <div class="form-group">
+                                        <label>Hari</label>
+                                        <input value="{{row.1}}" type="text" name="hari" class="form-control" id="exampleFormControlInput1" placeholder="Enter Hari">
+                                    </div>
+          
+                                    <div class="form-group">
+                                      <label>Tanggal</label>
+                                      <input value="{{row.3}}" type="datetime-local" name="tanggal" class="" id="exampleFormControlInput1" placeholder="Enter Tanggal">
+                                    </div>
+          
+                                    <div class="form-group">
+                                      <label>Kegiatan</label>
+                                      <input value="{{row.3}}" type="text" name="kegiatan" class="form-control" id="exampleFormControlInput1" placeholder="Enter Kegiatan">
+                                    </div>
+          
+                                    <div class="form-group">
+                                      <label>Keterangan</label>
+                                      <input value="{{row.4}}" type="text" name="keterangan" class="form-control" id="exampleFormControlInput1" placeholder="Enter Keterangan">
+                                    </div>
+          
+                                        <button type="submit" class="btn btn-success mb-2">Update</button>
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- End of EditKegiatan Modal -->
+          
+                  {% endfor %}
+              </tbody>
+               </table>
+            </div>
+          </div>
+          
+          </div>
+          </div>
+          <br>
+    </section>
+
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+
+
+</body>
+</html>
